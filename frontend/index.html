@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Party Golf</title>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="startScreen">
+        <div class="container">
+            <div class="logo"></div>
+            <div class="inputContainer">
+                <input id="playerName" type="text" placeholder="Name ..." autocomplete="off">
+                <div class="nameFailure" id="nameFailure">Please select a valid name!</div>
+            </div>
+            <div id="startButton">play</div>
+            <div id="status"></div>
+        </div>
+    </div>
+
+    <div id="leaderBoard">
+        <h1>SCORES</h1>
+        <h3 id="rounds"></h3>
+        <div id="playerRankings">
+
+        </div>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="playground"></canvas>
+    </div>
+    <script src="js/decomp.js"></script>
+    <script src="js/assetLoader.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/lobby.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/mouse.js"></script>
+    <script src="js/trail.js"></script>
+    <script src="js/shadow.js"></script>
+    <script src="js/client.js"></script>
+    <script src="js/matter.js"></script>
+    <script src="js/decomp.js"></script>
+</body>
+</html>

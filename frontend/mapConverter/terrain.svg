@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="163.23143mm"
+   height="93.594643mm"
+   viewBox="0 0 163.23143 93.594643"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="terrain.svg"
+   inkscape:export-filename="/Users/agnesreda/Downloads/Zeichnung-1.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.6735288"
+     inkscape:cx="255.32618"
+     inkscape:cy="171.3043"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-grids="true"
+     inkscape:snap-bbox="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="805"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-344.11391,392.0318)">
+    <g
+       id="g836">
+      <path
+         inkscape:connector-curvature="0"
+         id="path830"
+         d="m 343.63961,-386.65643 24.97965,-0.3162 6.79826,23.08246 21.97577,-0.4743 62.60723,-22.60816 48.22021,-0.9486 -0.1674,-4.29453 h -164.4157 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0.26458332" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path832"
+         d="m 343.48151,-336.22283 21.50148,-0.1581 26.08634,12.01553 38.57617,-0.3162 23.08247,-27.82544 3.47817,-0.1581 1.89719,3.63628 3.16198,0.1581 1.58099,-4.11058 h 4.58488 l 14.86131,18.1814 25.61205,7.43065 0.14879,32.43591 h -164.4157 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0.26458332" />
+    </g>
+  </g>
+</svg>
