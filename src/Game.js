@@ -18,7 +18,7 @@ class Game{
       thirdPlaceWinningPoints: 30,
       fourthPlaceWinningPoints: 0,
       respawnPause: 2000,
-      mapChangePause: 0,
+      mapChangePause: 3000,
       frameRate: 60,
       maxShootVelocityX: 0.01,
       maxShootVelocityY: 0.01,
