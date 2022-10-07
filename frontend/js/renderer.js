@@ -61,7 +61,7 @@ class Renderer {
         if(this.clientShadow === null) {
             this.clientShadow = new Shadow(this.session.map, this.mouse, this.config, this.camera);
         }
-
+        
         if(this.session.ballShootAble) {
             let shadowPoints = this.clientShadow.predictBallMovement(ball);
             this.context.save();
@@ -182,7 +182,9 @@ class Renderer {
 
         this.session.balls.forEach((ball) => {
             this.cameraAdjust(ball);
-            this.drawShadow(ball);
+            if(ball.id == this.session.playerId) {
+                this.drawShadow(ball);
+            }
             this.drawTrail(ball);
             this.drawBall(ball);
         });

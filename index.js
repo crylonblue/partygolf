@@ -1,13 +1,26 @@
 const socketio = require('socket.io');
 const Game = require('./src/Game');
+const express = require('express');
+const path = require('path');
 
-let app = require('express')();
-let server = require('http').Server(app);
+
+let webApp = express();
+
+webApp.use(express.static(path.join(__dirname, 'frontend')));
+
+webApp.listen(5002, () => {
+  console.log('webapp started');
+})
+
+
+
+let app = express();
+let websocketServer = require('http').Server(app);
 
 const serverUpdatesPerSeconds = 50;
 let connections = [];
 
-server.listen(3000, err => {
+websocketServer.listen(3000, err => {
 
   if (err) {
     console.error(err)
@@ -15,7 +28,7 @@ server.listen(3000, err => {
 
   const game = new Game(this);
   game.start();
-  const io = socketio(server);
+  const io = socketio(websocketServer);
 
   io.on('connection', socket => {
     console.log(socket.id);

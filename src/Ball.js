@@ -16,7 +16,6 @@ class Ball {
     this.isInHoleCounter = 0;
     this.points = 0;
     this.outOfMapRespawnInitiated = false;
-
   }
 
 }

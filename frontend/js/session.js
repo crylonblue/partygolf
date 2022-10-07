@@ -51,7 +51,6 @@ class Session{
         this.leaderBoard = data.leaderBoard;
         this.renderer.trails = [];
         this.currentRound = data.rounds;
-        console.log(this.playerId);
         this.renderer.render();
     }
 

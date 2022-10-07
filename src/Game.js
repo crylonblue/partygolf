@@ -346,11 +346,12 @@ class Game{
       const ballBody = ball.body;
       let velocity = ballBody.velocity;
       const isCollidingWithBound = this.bounds.reduce((isCollidingWithBound, bound) => {
+
         if (isCollidingWithBound) {
           return true;
         }
 
-        return Bounds.overlaps(ballBody.bounds, bound.bounds)
+        return Bounds.overlaps(ballBody.bounds, bound.bounds);
       }, false);
 
       return velocity.x <= this.config.maxShootVelocityX && velocity.y <= this.config.maxShootVelocityY && isCollidingWithBound && !ball.hasWon;
@@ -362,7 +363,7 @@ class Game{
   shoot (force, playerId) {
       const ball = this.getBallById(playerId);
       if(this.isBallShootable(ball)) {
-        Body.applyForce(ball.body, ball.body.position, force)
+        Body.applyForce(ball.body, ball.body.position, force);
       }
   }
 
