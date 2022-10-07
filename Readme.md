@@ -13,4 +13,4 @@ This is a multiplayer game inspired by the famous switch game party golf. The ga
 
     npm install socket.io
     npm install matter.js
-    node server.js
+    node index

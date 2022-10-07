@@ -18,7 +18,7 @@ class Game{
       thirdPlaceWinningPoints: 30,
       fourthPlaceWinningPoints: 0,
       respawnPause: 2000,
-      mapChangePause: 10000,
+      mapChangePause: 0,
       frameRate: 60,
       maxShootVelocityX: 0.01,
       maxShootVelocityY: 0.01,
@@ -60,12 +60,6 @@ class Game{
     let color = this.ballColors[index];
     this.ballColors.splice(index, 1);
     return color;
-  }
-
-  checkGameOver(){
-    if(this.currentRound >= this.numMaps){
-      this.gameOver = true;
-    }
   }
 
   newBall(id) {
@@ -187,6 +181,12 @@ class Game{
 
   checkBallEvents() {
     this.balls.forEach( ball => {
+      if(ball.shootAble != this.isBallShootable(ball) && ball.shootAbleImmunity > 30) {
+        ball.shootAbleImmunity = 0;
+        ball.shootAble = this.isBallShootable(ball);
+      }
+      ball.shootAbleImmunity += 1;
+      
       if (!ball.hasWon) {
         if (Bounds.overlaps(ball.body.bounds, this.currentHole.body.bounds)) {
           ball.isInHoleCounter = ball.isInHoleCounter + 1;
@@ -212,16 +212,11 @@ class Game{
 
       if(!this.requireNextMap) {
         if(this.allBallsFinishedMap()) {
-          this.checkGameOver();
-          if(!this.gameOver) {
-            this.mapLoaded = false;
-            this.requireNextMap = true;
-            setTimeout(() => {
-              this.setupNewMap();
-            }, this.config.mapChangePause)
-          } else {
-            this.requireNextMap = false;
-          }
+          this.mapLoaded = false;
+          this.requireNextMap = true;
+          setTimeout(() => {
+            this.setupNewMap();
+          }, this.config.mapChangePause)
         }
       }
 
@@ -233,7 +228,7 @@ class Game{
   }
 
   setupNewMap () {
-    this.currentRound++;
+    this.currentRound = this.mapFiles.length <= this.currentRound ? 1 : this.currentRound + 1;
     clearInterval(this.loop);
     this.loop = null;
     console.log(this.leaderBoard);
@@ -243,7 +238,7 @@ class Game{
     });
 
     this.bounds = [];
-
+    console.log(this.mapFiles[this.currentRound - 1]);
     this.loadMap(this.mapFiles[this.currentRound - 1], () => {
 
       this.balls.forEach(ball => {
@@ -360,9 +355,10 @@ class Game{
     return false;
   }
 
+
   shoot (force, playerId) {
       const ball = this.getBallById(playerId);
-      if(this.isBallShootable(ball)) {
+      if(ball.shootAble) {
         Body.applyForce(ball.body, ball.body.position, force);
       }
   }

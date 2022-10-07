@@ -83,7 +83,6 @@ class Session{
     stateChange (state) {
         this.balls = state.balls;
         this.gameStarted = state.gameStarted;
-        this.currentRound = state.currentRound;
         this.ballShootAble = state.ballShootAble;
         this.lobby.update();
         let ball = this.getClientBall();

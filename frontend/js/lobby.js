@@ -4,7 +4,6 @@ class Lobby {
         this.session = session;
         this.startScreen = document.getElementById('startScreen');
         this.leaderBoard = document.getElementById('leaderBoard');
-        this.roundElement = document.getElementById('rounds');
         this.playerRankings = document.getElementById('playerRankings');
         this.playButton = document.getElementById('startButton');
         this.nameInput = document.getElementById('playerName');
@@ -44,8 +43,6 @@ class Lobby {
             this.startScreen.style.display = 'none';
         }
 
-
-        this.roundElement.innerHTML = `Round ${this.session.currentRound} of 4`;
         let rankings = this.session.leaderBoard;
         var rankingHTML = '';
 

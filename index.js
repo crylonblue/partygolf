@@ -75,7 +75,7 @@ websocketServer.listen(3000, err => {
       if(game.isBallInGame(socket.id)) {
         socket.emit('update', {
           balls: game.getBalls(),
-          ballShootAble: game.isBallShootable(game.getBallById(socket.id)),
+          ballShootAble: game.getBallById(socket.id).shootAble,
           mapLoaded: game.mapLoaded,
           gameStarted: game.hasStarted,
         });
@@ -87,10 +87,6 @@ websocketServer.listen(3000, err => {
         });
       }
 
-      if(game.gameOver) {
-        socket.emit('game-over');
-      }
-
       if(game.mapLoaded && game.requireNextMap) {
         connections.forEach(socket => {
           socket.emit('new-map', {
@@ -99,8 +95,7 @@ websocketServer.listen(3000, err => {
             map: game.getMap(),
             balls: game.getBalls(),
             currentHole: game.getHole(),
-            leaderBoard: game.getLeaderBoard(),
-            rounds: game.getCurrentRound()
+            leaderBoard: game.getLeaderBoard()
           });
         });
         game.requireNextMap = false;
